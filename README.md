@@ -3,7 +3,11 @@
 AI presentation workspace: generate a deck from a topic, review it with Gemini, get a speaking script from the Presentation Coach, upload an existing PPTX/DOCX/PDF for analysis, and download the result as a real `.pptx` file.
 
 **Stack:** React + Vite + Tailwind (frontend) · Express (backend) · Firebase Auth + Firestore · Google Gemini API
+## Screenshots
 
+![Dashboard](screenshots/dashboard.png)
+![AI Review](screenshots/review.png)
+![Downloaded PPT](screenshots/ppt.png)
 ## Features
 
 - Email/password login, Google login, forgot password
