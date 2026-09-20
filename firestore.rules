@@ -1,0 +1,32 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // The presentation already exists and belongs to the logged-in user.
+    function isOwner() {
+      return signedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    // The document being written belongs to the logged-in user and looks sane.
+    function validPresentation() {
+      let d = request.resource.data;
+      return d.userId == request.auth.uid
+        && d.title is string && d.title.size() > 0 && d.title.size() <= 200
+        && d.content is string && d.content.size() <= 100000;
+    }
+
+    match /presentations/{presentationId} {
+      allow read:   if isOwner();
+      allow create: if signedIn() && validPresentation();
+      allow update: if isOwner() && validPresentation();
+      allow delete: if isOwner();
+    }
+
+    // Everything else is denied by default.
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "deckora-backend",
+  "version": "1.0.0",
+  "description": "Express API for Deckora AI: Gemini presentation generation, review, coaching, file upload analysis and PPTX export.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.11"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "officeparser": "^7.8.0",
+    "pptxgenjs": "^4.0.1"
+  }
+}
