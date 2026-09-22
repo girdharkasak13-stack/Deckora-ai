@@ -1,4 +1,5 @@
 # Deckora AI
+   **Live demo:** https://deckora-ai-chi.vercel.app (first load may take ~1 minute on free hosting)
 
 AI presentation workspace: generate a deck from a topic, review it with Gemini, get a speaking script from the Presentation Coach, upload an existing PPTX/DOCX/PDF for analysis, and download the result as a real `.pptx` file.
 
